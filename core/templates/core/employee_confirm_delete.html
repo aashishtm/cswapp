@@ -1,0 +1,14 @@
+<!-- core/templates/core/employee_confirm_delete.html -->
+{% extends "core/base.html" %}
+{% block title %}Delete Employee{% endblock %}
+{% block content %}
+<div class="container mx-auto p-4">
+    <h1 class="text-3xl font-bold mb-4">Delete Employee</h1>
+    <p>Are you sure you want to delete {{ employee.name }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Confirm Delete</button>
+        <a href="{% url 'employee_list' %}" class="ml-4 text-blue-500 hover:underline">Cancel</a>
+    </form>
+</div>
+{% endblock %}
